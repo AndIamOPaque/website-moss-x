@@ -4,6 +4,7 @@ import { useProductStore } from "../stores/useProductStore";
 import FeaturedProducts from "../components/FeaturedProducts";
 import HeroCarousel from "../components/HeroCarousel";
 import BundlesPreview from "../components/BundlesPreview";
+import Footer  from "../components/Footer";
 import CollectionsPreview from "../components/CollectionsPreview";
 
 const categories = [
@@ -89,6 +90,7 @@ function HomePage() {
         </div>
         {/* Existing Featured Products section moved below categories */}
         {!isLoading && products.length > 0 && <FeaturedProducts featuredProducts={products} />}
+		<Footer/>
       </div>
     </div>
   );

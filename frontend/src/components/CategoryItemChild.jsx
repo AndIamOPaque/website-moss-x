@@ -30,7 +30,7 @@ const CategoryItemChild = ({ category, previewCount = 4 }) => {
   {/* Scrollable Product Row */}
   <div
     ref={scrollRef}
-    className="flex space-x-4 overflow-x-auto overflow-hidden scrollbar-hide scroll-smooth px-4"
+    className="flex space-x-4 overflow-x-auto overflow-hidden scrollbar-hide scroll-smooth px-2 py-2"
     style={{ scrollSnapType: "x mandatory" }}
   >
     {products?.length === 0 && (
@@ -39,7 +39,6 @@ const CategoryItemChild = ({ category, previewCount = 4 }) => {
     {products?.map((product) => (
       <div
         key={product._id}
-        className="flex-shrink-0 scroll-snap-align-start"
       >
         <ProductCard product={product} variant="categoryPreview" />
       </div>
