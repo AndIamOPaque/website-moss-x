@@ -30,6 +30,39 @@ function ProductCard({ product, variant = "default" }) {
       </div>
     )
   }
+  if (variant === "categoryPreview") {
+    return (
+  <div
+  className="bg-gray-800 rounded-md shadow-sm p-1 flex flex-col h-48 w-36 hover:ring-2 hover:ring-emerald-400 transition cursor-pointer"
+  tabIndex={0}
+  role="button"
+  aria-label={`View product ${product.name}`}
+  onClick={() => navigate(`/product/${product._id}`)}
+  onKeyDown={e => { if (e.key === 'Enter') navigate(`/product/${product._id}`) }}
+>
+  <div className="w-full aspect-square bg-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+  <img
+    src={product.image}
+    alt={product.name}
+    className="w-full h-full object-contain"
+  />  
+</div>
+  <div className="w-full mt-1">
+    <h3 className="text-sm font-semibold text-emerald-300 line-clamp-1 text-left leading-tight">
+      {product.name}
+    </h3>
+    <div className="text-[10px] text-gray-400 line-clamp-1 text-left">
+      {product.description}
+    </div>
+    <span className="text-emerald-400 font-semibold text-sm text-left block mt-0.5">
+      ₹{product.price}
+    </span>
+  </div>
+</div>
+
+    )
+  }
+  
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
@@ -51,6 +84,7 @@ function ProductCard({ product, variant = "default" }) {
       navigate("/cart");
     }
   };
+
 
   return (
     <div
