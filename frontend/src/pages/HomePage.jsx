@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CategoryItem from "../components/CategoryItem";
 import { useProductStore } from "../stores/useProductStore";
 import FeaturedProducts from "../components/FeaturedProducts";
@@ -58,6 +58,7 @@ const categories = [
 
 function HomePage() {
   const { fetchFeaturedProducts, products, isLoading } = useProductStore();
+	const[showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     fetchFeaturedProducts();
@@ -84,10 +85,22 @@ function HomePage() {
         </p>
         {/* changing grid layout from grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 to grid-cols-1*/}
         <div className="grid grid-cols-1 gap-4">
-          {categories.map((category) => (
-            <CategoryItem category={category} key={category.name}/>
-          ))}
-        </div>
+			{(showAll ? categories : categories.slice(0, 4)).map((category) => (
+				<CategoryItem category={category} key={category.name} />
+			))}
+		</div>
+
+			{categories.length > 4 && (
+				<div className="flex justify-center mt-4">
+					<button
+						onClick={() => setShowAll((prev) => !prev)}
+						className="px-6 py-2 text-sm font-semibold text-emerald-500 hover:text-emerald-600 transition"
+					>
+						{showAll ? "Show Less" : "Show More"}
+					</button>
+				</div>
+			)}
+	
         {/* Existing Featured Products section moved below categories */}
         {!isLoading && products.length > 0 && <FeaturedProducts featuredProducts={products} />}
 		<Footer/>
