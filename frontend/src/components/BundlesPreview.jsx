@@ -35,7 +35,7 @@ function BundlesPreview() {
           return (
             <div
               key={bundle._id}
-              className="bg-gray-800 rounded-lg p-0 shadow-lg cursor-pointer hover:ring-2 hover:ring-emerald-400 transition transform hover:scale-[1.025] flex flex-col aspect-[4/5]"
+              className="bg-gray-800 rounded-lg p-0 shadow-lg cursor-pointer hover:ring-2 hover:ring-emerald-400 transition transform hover:scale-[1.025] flex flex-col aspect-4/5"
               onClick={() => navigate(`/bundle/${bundle._id}`)}
               tabIndex={0}
               role="button"
@@ -65,12 +65,12 @@ function BundlesPreview() {
                     <Link
                       key={p._id}
                       to={`/product/${p._id}`}
-                      className="flex items-center gap-1 bg-gray-900 rounded px-2 py-1 text-xs group"
+                      className="flex items-center gap-1 bg-gray-900 rounded-sm px-2 py-1 text-xs group"
                       onClick={e => e.stopPropagation()}
                       tabIndex={0}
                     >
-                      {p.image && <img src={p.image} alt={p.name} className="w-6 h-6 object-cover rounded group-hover:ring-2 group-hover:ring-emerald-400 transition" />}
-                      <span className="text-gray-200 max-w-[5rem] truncate group-hover:text-emerald-400 transition">{p.name}</span>
+                      {p.image && <img src={p.image} alt={p.name} className="w-6 h-6 object-cover rounded-sm group-hover:ring-2 group-hover:ring-emerald-400 transition" />}
+                      <span className="text-gray-200 max-w-20 truncate group-hover:text-emerald-400 transition">{p.name}</span>
                     </Link>
                   ))}
                   {bundle.products.length > 4 && (
@@ -79,14 +79,14 @@ function BundlesPreview() {
                 </div>
                 <div className="flex gap-2 mt-6">
                   <button
-                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded transition-colors text-base"
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-sm transition-colors text-base"
                     onClick={e => handleAddToCart(e, bundle)}
                     tabIndex={0}
                   >
                     Add to Cart
                   </button>
                   <button
-                    className="flex-1 bg-white/10 hover:bg-white/20 text-emerald-400 font-semibold py-2 px-4 rounded transition-colors text-base"
+                    className="flex-1 bg-white/10 hover:bg-white/20 text-emerald-400 font-semibold py-2 px-4 rounded-sm transition-colors text-base"
                     onClick={e => handleBuyNow(e, bundle)}
                     tabIndex={0}
                   >

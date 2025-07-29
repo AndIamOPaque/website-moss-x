@@ -48,7 +48,7 @@ const CategoryItemChild = ({ category, previewCount = 4 }) => {
   {/* Scroll Buttons */}	
   <button
     onClick={() => scroll("left")}
-    className="absolute left-0 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-none z-30"
+    className="absolute left-0 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-hidden z-30"
     aria-label="Scroll Left"
   >
     <ChevronLeft className="w-4 h-4 m-0" />
@@ -56,7 +56,7 @@ const CategoryItemChild = ({ category, previewCount = 4 }) => {
 
   <button
     onClick={() => scroll("right")}
-    className="absolute right-0 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-none z-30"
+    className="absolute right-0 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-hidden z-30"
     aria-label="Scroll Right"
   >
     <ChevronRight className="w-4 h-4 m-0" />

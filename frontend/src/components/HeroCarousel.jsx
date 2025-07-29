@@ -36,7 +36,7 @@ function HeroCarousel({ featuredProducts }) {
           className="object-cover w-full h-full"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-end">
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 to-transparent flex flex-col justify-end">
           <div className="max-w-7xl md:ml-28 mx-auto px-4 sm:px-6 lg:px-8 pb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-emerald-300 mb-2 drop-shadow-lg">{product.name}</h2>
             <p className="text-2xl md:text-2xl text-white mb-4 max-w-2xl drop-shadow-lg line-clamp-2 overflow-hidden">{product.description}</p>
@@ -59,14 +59,14 @@ function HeroCarousel({ featuredProducts }) {
         {/* Controls */}
         <button
           onClick={prev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-none"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-hidden"
           aria-label="Previous"
         >
           <ChevronLeft className="w-8 h-8" />
         </button>
         <button
           onClick={next}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-none"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-3 shadow-lg focus:outline-hidden"
           aria-label="Next"
         >
           <ChevronRight className="w-8 h-8" />

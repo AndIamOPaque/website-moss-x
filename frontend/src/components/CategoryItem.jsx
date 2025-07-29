@@ -12,7 +12,7 @@ const CategoryItem = ({ category }) => {
       {/* Image wrapper with gradient overlay */}
       <div className="relative h-full w-full">
         {/* Background Image */}
-		<div className="absolute inset-0 bg-gradient-to-tr from-gray-900/90 via-gray-900/60 to-transparent pointer-events-none z-10" />
+		<div className="absolute inset-0 bg-linear-to-tr from-gray-900/90 via-gray-900/60 to-transparent pointer-events-none z-10" />
         <img
           src={category.imageUrlStatic}
           alt={category.name}
